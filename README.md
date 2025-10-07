@@ -1,4 +1,4 @@
-# HTML-cv
+# HTML-CV
 
 A curriculum vitae maintained in plain text and rendered to HTML and PDF using CSS.
 
@@ -20,7 +20,7 @@ and edit the `index.md` file [directly in Github](https://help.github.com/articl
 
 ## Distribution
 
-To transform your plain text CV into a beautiful and shareable HTML page, you have two options:
+To transform your plain text CV into a beautiful and shareable HTML page.
 
 ### I. Use Github Pages to publish it online
 
