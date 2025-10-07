@@ -6,7 +6,7 @@ Researcher and educator with 2 years of experience, passionate microscopist, a d
 
 Email: [Udleont(a)unal.edu.co](mailto:Udleont@unal.edu.co) -  
 ORCID: [0000-0001-7868-9934](https://orcid.org/0000-0001-7868-9934) -  
-GitHub: [Usuy-Leon](https://github.com/Usuy-Leon)
+GitHub: [Usuaryo](https://github.com/Usuy-Leon)
 
 <div id="webaddress">
   <a href="https://usuy-leon.github.io/"><i class="fa-brands fa-bluesky"></i> Usuy-Leon</a> - -->
