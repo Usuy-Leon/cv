@@ -1,91 +1,128 @@
+# <span style="color:green;">USUY DAVID LEON TOLOSA</span>  
+Email: [Udleont@unal.edu.co](mailto:Udleont@unal.edu.co)  
+ORCID: [https://orcid.org/0000-0001-7868-9934](https://orcid.org/0000-0001-7868-9934)  
+GitHub: [https://github.com/Usuy-Leon](https://github.com/Usuy-Leon)  
+  
+Researcher and educator with 2 years of experience, passionate microscopist, and advocate for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of 3D tissues and structures. Motivated by advances in genetics, electrophysiology, and microscopy.
+
 ---
-layout: cv
-title: Isaac Newtons's CV
+
+## <span style="color:green;">Education</span>  
+**National University of Colombia, Bogotá, DC, Colombia**  
+*Bachelor in Biology*  
+Jan 2016 - Dec 2022  
+**Honors:** 
+2023 Best Bachelor Thesis of the Year Award |Top Undergraduate Performance, 2023 University-Level Saber Pro National Exam|Top 10% of graduating class  
+
 ---
-# Isaac Newton
-Physicist, Mathematician, Cambridge professor.
+## <span style="color:green;">Research Experience</span>  
 
-<div id="webaddress">
-<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
-</div>
+**University of Maryland, Faculty Assistant**  
+*Juan Angueyra's Laboratory, College Park, MD, U.S.A*  
+May 2023 – Jan 2025  
+- Characterized effects of thrb modulation on photoreceptor subtypes of *Astatotilapia Burtoni* (preliminary NSF grant data)  
+- Induced CRISPR mutagenesis on *Foxq2* transcription factor; sparse neuron labeling to evaluate synaptic connectivity in *Danio rerio*  
+- Assembled a custom electrophysiology rig and multi-wavelength stimulator for ERG recordings  
+- Recorded electroretinograms and optokinetic responses during early visual development of *Astatotilapia Burtoni*  
+- Explored horizontal cell diversity across species using DII staining and confocal microscopy (Snakes, Geckos, Cichlids, Mongolian Gerbil, Zebrafish)  
+- Proficient in retina microdissection and zebrafish aquaculture and maintenance  
 
+**National University of Colombia, Research Assistant**  
+*Neurophysiology Research Group, Bogotá, Colombia*  
+May 2021 - July 2023  
+- Established protocols to isolate functional photoreceptors from *Schmidtea mediterranea* planaria for patch clamp and calcium imaging  
+- Labeled phototransduction cascade elements by immunohistochemistry on planarian ocelli  
+- Skilled in planarian ocelli dissection and tissue dissociation; culture maintenance  
 
-## Currently
+**University of Pennsylvania, Research Trainee**  
+*Summer Undergraduate Internship Program (SUIP), Philadelphia, PA*  
+Summer 2020  
+- Applied machine learning (DeepLabCut) to analyze behavioral effects from optogenetic manipulations in mice ventral striatum  
+- Co-authored a review on olfactory and non-olfactory brain network connections  
 
-Standing on the shoulders of giants
+**National University of Colombia, Research Trainee**  
+*Neurophysiology Research Group, Bogotá, Colombia*  
+Jan 2019 - Dec 2020  
+- Trained in cellular electrophysiology, immunocytochemistry, chicken eye dissection, electrophoresis, Western blot, and neuroblastoma cell culture  
 
-### Specialized in
+**National University of Colombia, Research Trainee**  
+*Protein Research Group, Bogotá, Colombia*  
+Feb 2018 - Dec 2018  
+- Purified lectin protein from *Salvia bogotensis* to test insecticidal activity against *Tecia solanivora*  
 
-Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
+---
 
+## <span style="color:green;">Teaching Experience</span>  
 
-### Research interests
+**Neurophysiology Laboratory 405, Teaching Assistant**  
+*University of Maryland, College Park, MD, U.S.A*  
+Jan 2024 - May 2024  
+- Supervised weekly 4-hour labs (~20 students) on extracellular/intracellular electrophysiology with crayfish, crickets, and worms  
+- Guided students in experiment design and poster presentations of pharmacology and sensory data  
 
-Cooling, power series, optics, alchemy, planetary motions, apples.
+**High School Volunteer Teacher**  
+*Bogotá, DC, Colombia*  
+Feb 2017 - Dec 2018  
+- Mentored low-resource community students preparing for National University entrance exam  
 
+---
 
-## Education
+## <span style="color:green;">Publications</span>  
 
-`1654-1660`
-__The King's School, Grantham.__
+- Bhattarai, J.P., Etyemez, S., Jaaro-Peled H., Janke, E., Leon Tolosa, U.D., Kamiya, A., Gottfried, J.A., Sawa, A., Ma, M. (2021). Olfactory modulation of the medial prefrontal cortex circuitry: implications for social cognition. *Seminars in Cell and Developmental Biology*. [DOI](https://doi.org/10.1016/j.semcdb.2021.03.022)  
 
-`June 1661 - now`
-__Trinity College, Cambridge__
+---
 
-- Sizar
+## <span style="color:green;">Presentations and Posters</span>  
 
-`1667 - death`
-__Trinity College, Cambridge__
+- Leon, U., Forero, J. (2025). *El Observatorio Solar de Bacatá: Nuevas perspectivas arqueo astronómicas en el centro histórico de Bogotá*. V Workshop de Astronomia de los Andes, Universidad de Nariño, Pasto. (Principal presenter)  
+- Leon, U., Angueyra, J. (2024). *Waiting for godot? Unveiling the rules for synaptic connectivity of horizontal cells*. Mid Atlantic Zebrafish Meeting (MARZ), Rutgers University, NJ. (Principal presenter)  
+- Leon, U., Ma, M. (2020). *Contribution of the olfactory system to social cognition in mice*. Undergraduate Internship Program, University of Pennsylvania, Philadelphia, PA. (Principal presenter)  
+- Puerto, P., Leon, U., Zuluaga, M., Gomez, P. (2023). *Planaria eye as a study model of phototransduction*. XIII Seminario Nacional de Neurociencia (COLNE), Cali, Valle del Cauca. (Principal presenter)  
 
-- Fellow
+---
 
+## <span style="color:green;">Skills & Others</span>  
 
+**Techniques:**  
+- Lipid tracing (DII), Immunocytochemistry, Golgi staining  
+- Whole-cell patch clamp, Electroretinograms (ERG), Calcium imaging (GCamp6, Fluo4AM)  
+- Confocal, Light sheet, Confocal live, and Expansion microscopy  
+- PCR, cell transfection, Western blot  
 
-## Awards
+**Software:**  
+- Python (napari), FIJI-ImageJ, μManager, Linux, OpenSCAD, Inkscape, Nikon Elements, Zeiss Zen  
 
-`2012`
-President, *Royal Society*, London, UK
+**Hardware:**  
+- Soldering circuits, Arduino basics, Raspberry Pi  
 
-Associate, *French Academy of Science*, Paris, France
+**Relevant Coursework:**  
+- Cellular Biophysics, Molecular Biology, Genetics, Cell Biology, Animal Physiology I & II, Electricity and Magnetism, Biochemistry I & II  
+- Graduate courses in Neurobiology of Sensory Transduction, Membrane Biophysics, Fundamentals of Light Microscopy  
 
+**Languages:**  
+- Spanish (Fluent), English (Fluent), German (Beginner)  
 
+---
 
-## Publications
+## <span style="color:green;">References</span>  
 
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
+**Juan Angueyra, M.D., Ph.D.**  
+Assistant Professor, Department of Biology, University of Maryland – College Park  
+[angueyra@umd.edu](mailto:angueyra@umd.edu)  
 
-### Journals
+**Maria del Pilar Gomez, M.D., Ph.D.**  
+Associate Professor, Department of Biology, National University of Colombia  
+[mpgomzco@unal.edu.co](mailto:mpgomzco@unal.edu.co)  
 
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
+**Karen Carleton, Ph.D.**  
+Full Professor, Department of Biology, University of Maryland - College Park  
+[kcarleto@umd.edu](mailto:kcarleto@umd.edu)  
 
-`1669`
-Lectiones opticæ.
+**Minghong Ma, Ph.D.**  
+Associate Professor, Department of Neuroscience, University of Pennsylvania  
+[minghong@pennmedicine.upenn.edu](mailto:minghong@pennmedicine.upenn.edu)  
 
-etc. etc. etc.
-
-### Patents
-
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
-
-
-## Occupation
-
-`1600`
-__Royal Mint__, London
-
-- Warden
-- Minted coins
-
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
-
-
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
-
-
+**Enrico Nasi, Ph.D.**  
+Full Professor, Genetics Institute, National University of Colombia  
+[enasil@unal.edu.co](mailto:enasil@unal.edu.co)  
