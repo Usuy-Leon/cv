@@ -1,18 +1,14 @@
 
----
-layout: cv
-title: Usuy Leon's CV
----
 
 # Usuy David Leon Tolosa
 
 Researcher and educator with 2 years of experience, passionate microscopist, a dreamer for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of tissues and structures. 
 
-<a href="udleont(a)unal.edu.co">udleont@unal.edu.co </a>
+Email: [Udleont(a)unal.edu.co](mailto:Udleont@unal.edu.co) -  
+ORCID: [0000-0001-7868-9934](https://orcid.org/0000-0001-7868-9934) -  
+GitHub: [Usuy-Leon](https://github.com/Usuy-Leon)
 
 <div id="webaddress">
-  <a href="https://github.com/Usuy-Leon"><i class="fa-solid fa-house"></i> github-Usuy-Leon</a> - 
-  <a href="https://orcid.org/0000-0001-7868-9934"><i class="fa-brands fa-orcid"></i> 0000-0001-7868-9934</a> - 
   <a href="https://www.researchgate.net/profile/Usuy-Leon"><i class="ai ai-researchgate"></i> Usuy-Leon</a> - -->
   <a href="https://neurotree.org/beta/peopleinfo.php?pid=928916"><i class="fa-brands fa-bluesky"></i> NeuroTree</a>
 </div>
