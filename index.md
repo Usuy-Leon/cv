@@ -6,7 +6,7 @@ title: Usuy Leon's CV
 
 # Usuy David Leon Tolosa
 
-Researcher and educator with 2 years of experience, passionate microscopist, and advocate for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of 3D tissues and structures. Motivated by advances in genetics, electrophysiology, and microscopy.
+Researcher and educator with 2 years of experience, passionate microscopist, a dreamer for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of tissues and structures. 
 
 <a href="udleont(a)unal.edu.co">udleont@unal.edu.co </a>
 
@@ -23,8 +23,7 @@ Researcher and educator with 2 years of experience, passionate microscopist, and
 
 **National University of Colombia, Bogotá, DC, Colombia**  
 Bachelor in Biology, Jan 2016 - Dec 2022  
-*Honors:* 2023 Best Bachelor Thesis of the Year Award | Top Undergraduate Performance, 2023 University-Level Saber Pro National Exam | Top 10% of graduating class
-
+*Honors:* 2023 Best Bachelor Thesis of the Year Award | Top 10% Undergraduate Performance| 2023 Best University-Level Saber Pro National Exam | 
 ---
 
 ## Research Experience
@@ -70,12 +69,12 @@ Feb 2018 - Dec 2018
 *University of Maryland, College Park, MD, U.S.A*  
 Jan 2024 - May 2024  
 - Supervised weekly 4-hour labs (~20 students) on extracellular/intracellular electrophysiology with crayfish, crickets, and worms  
-- Guided students in experiment design and poster presentations of pharmacology and sensory data
+- Guided students in experiment design and poster presentations of pharmacology on sensory trasduction data
 
 **High School Volunteer Teacher**  
 *Bogotá, DC, Colombia*  
 Feb 2017 - Dec 2018  
-- Mentored low-resource community students preparing for National University entrance exam
+- Mentored low-resource community students preparing for  National University of colombia entrance exam.
 
 ---
 
