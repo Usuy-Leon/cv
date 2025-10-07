@@ -19,7 +19,7 @@ GitHub: [Usuy-Leon](https://github.com/Usuy-Leon)
 
 **National University of Colombia, Bogotá, DC, Colombia**  
 Bachelor in Biology, Jan 2016 - Dec 2022  
-*Honors:* 2023 Best Bachelor Thesis of the Year Award | Top 10% Undergraduate Performance| 2023 Best University-Level Saber Pro National Exam | 
+*Honors:* 2023 Best Bachelor Thesis of the Year Award | Top 10% Undergraduate Performance| 2023 Top Performance University-Level Saber Pro National Exam | 
 ---
 
 ## Research Experience
