@@ -1,10 +1,21 @@
+
+---
+layout: cv
+title: Usuy Leon's CV
+---
+
 # Usuy David Leon Tolosa
 
 Researcher and educator with 2 years of experience, passionate microscopist, and advocate for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of 3D tissues and structures. Motivated by advances in genetics, electrophysiology, and microscopy.
 
-Email: [Udleont(a)unal.edu.co]
-ORCID: [0000-0001-7868-9934](https://orcid.org/0000-0001-7868-9934)  
-GitHub: [Usuy-Leon](https://github.com/Usuy-Leon)
+<a href="udleont@hunal.edu.co">udleont@unal.edu.co </a>
+
+<div id="webaddress">
+  <a href="https://github.com/Usuy-Leon"><i class="fa-solid fa-house"></i> github-Usuy-Leon</a> - 
+  <a href="https://orcid.org/0000-0001-7868-9934"><i class="fa-brands fa-orcid"></i> 0000-0001-7868-9934</a> - 
+  <a href="https://www.researchgate.net/profile/Usuy-Leon"><i class="ai ai-researchgate"></i> Usuy-Leon</a> - -->
+  <a href="https://neurotree.org/beta/peopleinfo.php?pid=928916"><i class="fa-brands fa-bluesky"></i> NeuroTree</a>
+</div>
 
 ---
 
@@ -12,7 +23,7 @@ GitHub: [Usuy-Leon](https://github.com/Usuy-Leon)
 
 **National University of Colombia, Bogotá, DC, Colombia**  
 Bachelor in Biology, Jan 2016 - Dec 2022  
-**Honors:** 2023 Best Bachelor Thesis of the Year Award | Top Undergraduate Performance, 2023 University-Level Saber Pro National Exam | Top 10% of graduating class
+*Honors:* 2023 Best Bachelor Thesis of the Year Award | Top Undergraduate Performance, 2023 University-Level Saber Pro National Exam | Top 10% of graduating class
 
 ---
 
@@ -94,7 +105,7 @@ Olfactory modulation of the medial prefrontal cortex circuitry: implications for
 - PCR, cell transfection, Western blot
 
 **Software:**  
-- Python, FIJI-ImageJ, μManager, Linux, OpenSCAD, Inkscape, Nikon Elements, Zeiss Zen
+- Python (napari), FIJI-ImageJ, μManager, Linux, OpenSCAD, Inkscape, Nikon Elements, Zeiss Zen
 
 **Hardware:**  
 - Soldering circuits, Arduino basics, Raspberry Pi
@@ -129,4 +140,12 @@ Associate Professor, Department of Neuroscience, University of Pennsylvania
 **Enrico Nasi, Ph.D.**  
 Full Professor, Genetics Institute, National University of Colombia  
 [enasil@unal.edu.co](mailto:enasil@unal.edu.co)
+
+Citizenship: Colombia
+
+<!-- 
+Family: Married, two children
+-->
+
+<br/>Last updated: October 2025<br/><br/>
 
