@@ -8,7 +8,7 @@ title: Usuy Leon's CV
 
 Researcher and educator with 2 years of experience, passionate microscopist, and advocate for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of 3D tissues and structures. Motivated by advances in genetics, electrophysiology, and microscopy.
 
-<a href="udleont@hunal.edu.co">udleont@unal.edu.co </a>
+<a href="udleont(a)unal.edu.co">udleont@unal.edu.co </a>
 
 <div id="webaddress">
   <a href="https://github.com/Usuy-Leon"><i class="fa-solid fa-house"></i> github-Usuy-Leon</a> - 
