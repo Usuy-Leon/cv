@@ -100,7 +100,7 @@ Olfactory modulation of the medial prefrontal cortex circuitry: implications for
 - PCR, cell transfection, Western blot
 
 **Software:**  
-- Python (napari), FIJI-ImageJ, μManager, Linux, OpenSCAD, Inkscape, Nikon Elements, Zeiss Zen
+- Python, FIJI-ImageJ, μManager, Linux, OpenSCAD, Inkscape, Nikon Elements, Zeiss Zen
 
 **Hardware:**  
 - Soldering circuits, Arduino basics, Raspberry Pi
