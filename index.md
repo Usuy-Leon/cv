@@ -4,7 +4,7 @@
 
 Researcher and educator with 2 years of experience, passionate microscopist, a dreamer for diversity, open science, and open software. Focused on biological mechanisms underlying pattern formation and regeneration of tissues and structures. 
 
-Email: [Udleont(a)unal.edu.co](mailto:Udleont@unal.edu.co) -  
+Email: [Udleont(a)unal.edu.co](https://usuy-leon.github.io/cv/) -  
 ORCID: [0000-0001-7868-9934](https://orcid.org/0000-0001-7868-9934) -  
 GitHub: [Usuaryo](https://github.com/Usuy-Leon)
 
