@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<a href="https://usuy-leon.github.io/Usuy-Leon/" class="home-button" title="Home">
+<button id="homeButton" title="Home" onclick="location.href='https://usuy-leon.github.io/Usuy-Leon/'">
   <i class="fas fa-house"></i>
-</a>
+</button>
 <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,23 +83,32 @@
     --accent: #c5f2a8;
     --card: #2a2a2a;
 }
-.home-button {
-    display: inline-flex;
+#homeButton {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* aligned left */
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    gap: 6px;
+    transition: 0.25s;
+    z-index: 1000;
   }
 
-  .home-button:hover {
-    background-color: #0056b3;
+  [data-theme="dark"] #homeButton {
+    background: var(--accent);
+    color: black;
+  }
+
+  #homeButton:hover {
+    filter: brightness(0.9);
   }
 /* ============================================================
    GLOBAL
