@@ -1,0 +1,535 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+  top=2 cm,
+  bottom=2 cm,
+  left=2 cm,
+  right=2 cm,
+  footskip=1.0 cm
+]{geometry}
+
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lato}
+
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+\usepackage[
+  colorlinks=true,
+  urlcolor=primaryColor
+]{hyperref}
+
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{etoolbox} % for \AtBeginEnvironment
+
+% Font encoding
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Formatting
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep=0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.4 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Highlights environment
+\newenvironment{highlights}{
+  \begin{itemize}[
+    topsep=0.10 cm,
+    parsep=0.10 cm,
+    partopsep=0pt,
+    itemsep=0pt,
+    leftmargin=10pt
+  ]
+}{
+  \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+  \begin{itemize}[
+    topsep=0.10 cm,
+    parsep=0.10 cm,
+    partopsep=0pt,
+    itemsep=0pt,
+    leftmargin=10pt
+  ]
+}{
+  \end{itemize}
+}
+
+% Single column wrapper
+\newenvironment{onecolentry}{
+  \begin{adjustwidth}{0.00001cm}{0.00001cm}
+}{
+  \end{adjustwidth}
+}
+
+% --- Connected bullets (stable version) ---
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\newcounter{cbitem}
+
+% Environment
+\newenvironment{connectedbullets}{
+  \setcounter{cbitem}{0}%
+  \begin{itemize}[leftmargin=1.6cm, itemsep=1.2em]
+}{
+  \end{itemize}
+}
+
+% Bullet + connecting line
+\newcommand{\connecteditem}{%
+    \stepcounter{cbitem}%
+    \edef\cbcurrent{cb\thecbitem}%
+
+    % Draw the bullet node
+    \item[\tikz[remember picture,baseline=-0.6ex]{%
+        \node (\cbcurrent) [circle, fill=forestgreen,
+            minimum size=5pt, inner sep=0pt] {};
+    }]%
+
+    % Draw the connector *after* the item, ensuring node exists
+    \ifnum\value{cbitem}>1
+        \tikz[remember picture,overlay]{%
+            \draw[forestgreen,line width=0.6pt]
+                ($(cb\the\numexpr\value{cbitem}-1\relax.south)$)
+                -- ($(cb\thecbitem.north)$);
+        };
+    \fi
+}
+
+
+% Two-column environment (fixed)
+\newenvironment{twocolentry}[1]{%
+  \def\RightColumn{#1}%
+  \begin{onecolentry}%
+  \begin{paracol}{2}%
+  \setlength{\columnsep}{0.15cm}%
+  \raggedright%
+}{%
+  \switchcolumn%
+  \raggedleft \RightColumn%
+  \end{paracol}%
+  \end{onecolentry}%
+}
+
+% Header environment
+\newenvironment{header}{
+  \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+  \par\kern\topsep
+}
+
+% "Last updated" marker
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(\LenToUnit{\paperwidth-0.3cm}, \LenToUnit{\paperheight-0 cm}){%
+      \vtop{{\null}\makebox[0pt][c]{%
+        \small\color{white}\textit{Actualizado Octubre 2025}\hspace{\widthof{Actualizado Octubre 2025}}
+      }}%
+    }%
+  }%
+}
+
+\let\hrefWithoutArrow\href
+
+% Dark forest green color (#145A14)
+\definecolor{forestgreen}{RGB}{20,90,20}
+\definecolor{olivegreen}{RGB}{20, 90, 20}
+\begin{document}
+% This will overlay the house icon as a clickable link in the upper-left corner of the page
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north west, xshift=10pt, yshift=-10pt] at (current page.north west) 
+  {\href{https://usuy-leon.github.io/cv/}{\includegraphics[width=48pt]{home.png}}};
+\end{tikzpicture}
+
+\placelastupdatedtext
+
+\begin{tikzpicture}[remember picture, overlay]
+  % Rectangle covering top 8 cm
+  \fill[forestgreen] (current page.north west) rectangle ([yshift=-8cm]current page.north east);
+
+  % Title centered
+  \node[
+    white,
+    font=\fontsize{25pt}{25pt}\selectfont,
+    align=center,
+    anchor=north,
+    text width=\paperwidth,
+    yshift=-1.5cm
+  ] at (current page.north) {Usuy David León Tolosa};
+
+  % Contact info (corrected hyperlinks)
+  \node[
+    white,
+    font=\normalsize,
+    align=center,
+    anchor=north,
+    text width=\paperwidth,
+    yshift=-3.1cm
+  ] at (current page.north) {%
+    \sffamily
+    \kern 5pt \textbar \kern 5pt Colombia \kern 5pt \textbar \kern 5pt
+    \href{mailto:udleont@unal.edu.co}{\textcolor{white}{udleont@unal.edu.co}} \kern 5pt \textbar \kern 5pt
+    \href{https://orcid.org/0000-0001-7868-9934}{\textcolor{white}{ORCID}} \kern 5pt \textbar \kern 5pt
+    \href{https://github.com/Usuy-Leon}{\textcolor{white}{GitHub}} \kern 5pt \textbar \kern 5pt
+    \href{https://usuy-leon.github.io/cv//}{\textcolor{white}{Web}}
+  };
+
+  % Section title
+  \node[
+    white,
+    font=\bfseries\large,
+    align=center,
+    anchor=north,
+    text width=\paperwidth,
+    yshift=-4.1cm
+  ] at (current page.north) {Resumen};
+
+  % Resumen text
+  \node[
+    white,
+    font=\normalsize,
+    align=justify,
+    anchor=north,
+    text width=0.85\paperwidth,
+    yshift=-5.0cm
+  ] at (current page.north)
+  {
+    Investigador y educador con 2 años de experiencia después de explorar los mecanismos biológicos que subyacen a la formación de tejidos, la retina y la visión. Mi propósito profesional es aportar activamente a la construcción de una Colombia en paz, que permita soñar con el cuidado de la vida, la ciencia y la innovación. Busco impulsar procesos colectivos, de diversidad, educación y de ciencia abierta, que nos permitan superar el legado de violencia que de una u otra forma todos los colombianos llevamos.
+  };
+
+\end{tikzpicture}
+
+    \vspace*{5.3cm} % Space after the fixed block
+
+        \textcolor{forestgreen}{\section{Formación académica}}
+
+    \begin{twocolentry} {\textcolor{forestgreen}{Enero 2016 -- Diciembre 2022}}
+        \textcolor{olivegreen}{\textbf{Biólogo}}: \textbf{Universidad Nacional de Colombia}, Bogotá
+    \end{twocolentry}
+
+    \setlength{\parskip}{0.3cm}
+    
+	\begin{onecolentry}
+        \begin{highlights}
+            \item Premio Universidad Nacional Mejor Trabajo de Grado Facultad de Biología 2023
+            \item Premio Nacional Mejores Resultados Académicos Examen Saber Pro 2023
+        \end{highlights}
+    \end{onecolentry}
+    
+	\vspace{-0.8 cm}
+	\textcolor{forestgreen}{\section{Experiencia Profesional}}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Mayo 2023 -- Diciembre 2024
+		}}
+		\textcolor{olivegreen}{\textbf{Asistente de Profesorado}}, \textbf{Universidad de Maryland}, College Park, MD, USA. \\
+		\textit{Laboratorio de Dr. Juan Angueyra, Ph.D.}
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+        \begin{highlights}
+		      \item Exploración de la diversidad de subtipos de células horizontales en múltiples especies utilizando marcaje neuronal y microscopía confocal en serpientes, geckos, peces y gerbos.
+		      \item Caracterizacion de los efectos de la modulación de la hormona tiroidea en los subtipos de fotorreceptores de \textit{Astatotilapia burtoni}.
+		      \item Caracterizacion de factores de transcripción, después de mutagénesis, para evaluar la conectividad sináptica de diferentes subtipos de células de la retina.
+		      \item Construcción de equipos de electrofisiología y estimuladores para  registro de electroretinogramas.
+        \end{highlights}
+	\end{onecolentry}
+	
+	\vspace{0.2 cm}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Enero 2024 -- Mayo 2024
+		}}
+		\textcolor{olivegreen}{\textbf{Asistente de Docencia}}, \textbf{Universidad de Maryland}, \\
+		\textit {Laboratorio de Neurofisiología 405, College Park, USA.\\ Profesora a cargo: Dra. Hillary Bierman, Ph.D.}
+		
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Supervisé de manera independiente un grupo de 20 estudiantes durante sesiones semanales de laboratorio de 4 horas, coordinando y dirigiendo actividades centradas en registros electrofisiológicos extracelulares e intracelulares.
+			\item Asesoré a los estudiantes en el diseño y ejecución de sus propios experimentos científicos. Utilizamos diversos modelos experimentales, incluyendo cangrejos de río, grillos y gusanos.
+			\item Orienté la presentación de resultados científicos mediante articulos y pósteres. 
+		\end{highlights}
+	\end{onecolentry}
+	
+	\vspace{0.2 cm}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{Enero 2017 -- Diciembre 2018}
+		}
+		\textcolor{olivegreen}{\textbf{Profesor voluntario}},\textbf{ Colegio 20 de julio},\\ Bogotá, DC, Colombia
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			
+			\item Brindamos mentoría y acompañamiento a estudiantes provenientes de comunidades con bajos recursos, con una intensidad de 2 horas a la semana, para contribuir al fortalecimiento académico y motivacional de los estudiantes, mejorando sus oportunidades de ingreso a la Universidad Nacional de Colombia.
+		\end{highlights}
+    
+	\end{onecolentry}
+	
+	\textcolor{forestgreen}{\section{Publicaciones}}
+	
+	Leon, U., Forero, J. (2025). 
+	\textbf{El Observatorio Solar de Bacatá: Nuevas perspectivas arqueoastronómicas en el centro histórico de Bacatá}. 
+	eSPECTRA. Revista del Observatorio Nacional de Colombia (En revisión).
+	
+	
+	Bhattarai, J.P., Etyemez, S., Jaaro-Peled, H., Janke, E., León Tolosa, U.D., Kamiya, A., Gottfried, J.A., Sawa, A., Ma, M. (2021).
+	\textbf{Modulación olfativa del circuito de la corteza prefrontal medial: implicaciones para la cognición social}.  \href{https://doi.org/10.1016/j.semcdb.2021.03.022}{Seminars in Cell and Developmental Biology}
+	
+	\vspace{-0.3 cm}
+	\textcolor{forestgreen}{\section{Experiencia en Investigación}}
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Mayo 2021 -- Diciembre 2022
+		}}
+		\textcolor{olivegreen}{\textbf{Asistente de Investigación}},\\\textbf{Universidad Nacional de Colombia, Bogotá, D.C.} \\
+		\textit{Grupo de Investigación en Neurofisiología} \\
+		\textit{Supervisor: Enrico Nasi, PhD}
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Establecimiento de un protocolo para aislar fotoreceptores funcionales en planaria (\textit{Schmidtea mediterranea}) para explorar la vía de fototransducción mediante mediciones eléctricas.
+			\item Marcaje de diferentes elementos de la cascada de fototransducción usando inmunohistoquímica en ocelos de planaria.
+			\item Responsable del mantenimiento de planarias  y micro disección de ocelos.
+		\end{highlights}
+	\end{onecolentry}
+	
+	\vspace{0.3 cm}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Verano 2020}
+		}
+		\textcolor{olivegreen}{\textbf{Pasantia de Investigacion}}, \\\textbf{University of Pennsylvania, Filadelfia, PA, USA} \\
+		\textit{Programa de intercambio de Verano para Pregrado (SUIP)} \\
+		\textit{Supervisor: Minghong Ma, PhD} 
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Análisis de videos e imágenes utilizando inteligencia artificial, específicamente la red neuronal “DeepLabCut”, para estudiar cambios conductuales tras manipulación optogenética de las neuronas de las islas de Calleja en el cuerpo estriado.
+			\item Coautor de un artículo sobre las conexiones en red entre áreas olfativas y no olfativas, como el bulbo olfatorio y la corteza prefrontal.
+		\end{highlights}
+	\end{onecolentry}
+	
+	\vspace{0.3 cm}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Enero 2019 -- Diciembre 2020
+		}}
+		\textcolor{olivegreen}{\textbf{Investigador en Formación}}, \\\textbf{Universidad Nacional de Colombia, Bogotá, D.C.}, \\
+		\textit{Grupo de Investigación en Neurofisiología} \\
+		\textit{Supervisor: María Del Pilar Gómez, MD, PhD }
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Capacitación en fundamentos de registros electrofisiológicos celulares e inmunohistoquímica.
+			\item Entrenamiento en disección de ojos de pollo y ensayos proteicos como electroforesis y Western Blot.
+			\item Mantenimiento y cultivo celular de neuroblastoma.
+		\end{highlights}
+	\end{onecolentry}
+	
+	\vspace{0.3 cm}
+	
+	\begin{twocolentry}{\textcolor{forestgreen}{
+			Enero 2018 -- Diciembre 2018
+		}}
+		\textcolor{olivegreen}{\textbf{Investigador en Formación}}, \\\textbf{Universidad Nacional de Colombia, Bogotá, D.C.},\\
+		\textit{Grupo de Investigación en Proteínas} \\
+		\textit{Supervisor: Edgar Reyes, PhD}
+	\end{twocolentry}
+	
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Trabajo en la purificación de una proteína de \textit{Salvia bogotensis}, utilizando cromatografía de afinidad y exclusión molecular para explorar la actividad insecticida de esta proteína en lepidópteros \textit{Tecia solanivora}.
+		\end{highlights}
+	\end{onecolentry}
+	
+	\vspace{-0.5cm}
+	
+	\textcolor{forestgreen}{\section{Presentaciones}}
+	
+	\noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.75\textwidth} >{\raggedleft\arraybackslash}p{0.20\textwidth} }
+    \textbf{El Observatorio Solar de Bacatá: Nuevas perspectivas
+arqueoastronómicas en el centro histórico de Bogotá.} & 2024 \\
+    \end{tabular*}
+	\vspace{-0.5cm}
+	\begin{onecolentry}
+		\mbox{\textbf{León, U.}}, \mbox{Forero, J.} — V Taller de Astronomía de los Andes, Universidad de Nariño, Pasto. 
+	\end{onecolentry}
+	
+	\vspace{0.1 cm}
+	
+	\noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.75\textwidth} >{\raggedleft\arraybackslash}p{0.20\textwidth} }
+    \textbf{¿Esperando a Godot? Descifrando las reglas de
+conectividad sináptica de las células horizontales.} & 2024 \\
+    \end{tabular*}
+    \vspace{-0.5cm}
+	\begin{onecolentry}
+		\mbox{\textbf{León, U.}}, \mbox{Angueyra, J.} — Mid Atlantic Zebrafish Meeting (MARZ), Rutgers, NJ.\
+	\end{onecolentry}
+    
+    \vspace{0.2 cm}
+    
+    \noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.75\textwidth} >{\raggedleft\arraybackslash}p{0.20\textwidth} }
+    \textbf{El ojo de planaria como modelo para estudiar la
+    fototransducción.} & 2023 \\
+    \end{tabular*}
+
+	\vspace{-0.3cm}
+    
+	\begin{onecolentry}
+		\mbox{Puerto, P.}, \mbox{\textbf{León, U.}}, \mbox{Zuluaga, M.}, \mbox{Gómez, P.} — XIII Seminario Nacional de Neurociencia (COLNE), Cali.
+	\end{onecolentry}
+	
+	\vspace{0.2 cm}
+
+    \noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.75\textwidth} >{\raggedleft\arraybackslash}p{0.20\textwidth} }
+    \textbf{Contribución del sistema olfativo a la cognición social en ratón.} & 2020 \\
+    \end{tabular*}
+    
+    \vspace{-0.3 cm}
+    
+    \begin{onecolentry}
+        \mbox{\textbf{León, U.}}, \mbox{Ma, M.} — Undergraduate Internship Program, University of Pennsylvania, Philadelphia, PA. \
+	\end{onecolentry}
+
+	\vspace{-1 cm}
+	
+	
+	\textcolor{forestgreen}{\section{Habilidades técnicas}}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Microscopía:}} Confocal, de hoja de luz, Expansión, en vivo
+	\end{onecolentry}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Electrofisiología:}} Patch-clamp, ERG, registros extracelulares, Vizualizacion de calcio (GCaMP6, Fluo-4 AM)
+	\end{onecolentry}
+	
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Técnicas moleculares:}} PCR, CRISPR, Western blot, transfección
+	\end{onecolentry}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Tinciones:}} DII, Golgi, inmunocitoquímica
+	\end{onecolentry}
+	
+	\vspace{-1.2cm}
+	
+	\textcolor{forestgreen}{\section{Software y programación}}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{ \textbf{Software:}}Python, Bash, FIJI/ImageJ, \textmu Manager, Nikon Elements, Zeiss Zen, DeepLabCut, Prusa Slicer
+	\end{onecolentry}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Herramientas:}} Linux, Inkscape, OpenSCAD, Git, LaTeX
+	\end{onecolentry}
+	
+	\begin{onecolentry}
+		\textcolor{forestgreen}{\textbf{Hardware:}} Impresion 3D, Arduino, Raspberry Pi, soldadura básica de circuitos
+	\end{onecolentry}
+	\vspace{-1.2cm}
+	\textcolor{forestgreen}{\section{Idiomas}}
+	
+	\begin{twocolentry}{
+			Nativo
+		}
+		\textbf{Español}
+	\end{twocolentry}
+	
+	\begin{twocolentry}{
+			C1 Fluido
+		}
+		\textbf{Ingles}
+	\end{twocolentry}
+	
+	\begin{twocolentry}{
+			A2 Básico
+		}
+		\textbf{Aleman}
+	\end{twocolentry}
+	
+	\vspace{-1cm}
+	
+	\textcolor{forestgreen}{\section{Referencias}}
+	\vspace{-0.3cm}
+	\begin{multicols}{2}
+		
+		\noindent\textcolor{forestgreen}{\textbf{Juan Angueyra, M.D., Ph.D.}} \\
+		Profesor Asistente, Departamento de Biología, Universidad de Maryland \\
+		\href{mailto:angueyra@umd.edu}{angueyra(a)umd.edu}
+		
+		
+		\noindent\textcolor{forestgreen}{\textbf{María del Pilar Gómez, M.D., Ph.D.}} \\
+		Profesora Asociada, Departamento de Biología, Universidad Nacional de Colombia \\
+		\href{mailto:mpgomzco@unal.edu.co}{mpgomzco(a)unal.edu.co}
+		
+		
+		
+		\noindent\textcolor{forestgreen}{\textbf{Karen Carleton, Ph.D.}} \\
+		Profesora Titular, Departamento de Biología, Universidad de Maryland \\
+		\href{mailto:kcarleto@umd.edu}{kcarleto(a)umd.edu}
+		
+		
+		\noindent\textcolor{forestgreen}{\textbf{Minghong Ma, Ph.D.}} \\  
+		Profesora Titular, Departamento de Neurociencia, Universidad de Pennsylvania \\ \href{mailto:minghong@pennmedicine.upenn.edu.}{minghong(a)pennmedicine.upenn.edu.}
+    \end{multicols}
+      \begin{twocolentry}{
+            
+        }
+        \textcolor{forestgreen}{\textbf{Enrico Nasi Lignarolo, Ph.D.}} \\
+		Profesor titular, Departamento de genética, \\
+        Universidad Nacional de Colombia \\
+		\href{mailto:enasil@unal.edu.co}{enasil(a)unal.edu.co}
+     \end{twocolentry}
+		
+	
+\end{document}
