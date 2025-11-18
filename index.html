@@ -24,6 +24,23 @@
     --text-size: 1.05rem;
     --small-size: 0.9rem;
 }
+ul.grouped-list {
+    list-style-type: disc; /* standard bullet points */
+    padding-left: 20px;
+    margin: 0;
+    border: 1px solid #ccc; /* optional: border around whole list */
+    border-radius: 4px; /* optional: rounded corners */
+    max-width: 600px; /* optional: limit the width */
+  }
+
+ul.grouped-list li {
+    padding: 8px 12px; /* spacing inside each item */
+    border-top: 1px solid #ccc; /* thin line on top of each item */
+  }
+
+ul.grouped-list li:first-child {
+    border-top: none; /* remove the line on the first item */
+  }
 
 [data-theme="dark"] {
     --bg: #1c1c1c;
@@ -356,32 +373,28 @@ li { margin-bottom: 6px; }
 
 <div class="entry">
     <div class="entry-date">Spanish</div>
-    <div class="entry-content"><strong>C2 </strong></div
-
+    <div class="entry-content"><strong>C2</strong></div>
 </div>
 
 <div class="entry">
     <div class="entry-date">English</div>
-    <div class="entry-content"><strong>C1</strong></div
-
+    <div class="entry-content"><strong>C1</strong></div>
 </div>
 
 <div class="entry">
     <div class="entry-date">German</div>
-    <div class="entry-content"><strong>A2</strong></div>   
+    <div class="entry-content"><strong>A2</strong></div>
+</div>
 
-</div>
-<hr>
-</div>
 <!-- ===== Referencias ===== -->
 <div class="section-title">Referencias</div>
-
 <div class="references">
     <div>
         <strong>Juan Angueyra, M.D., Ph.D.</strong><br>
         Assistant Professor, Department of Biology, University of Maryland – College Park<br>
         <a href="mailto:angueyra@umd.edu">angueyra@umd.edu</a>
     </div>
+
 
     <div>
         <strong>María del Pilar Gómez, M.D., Ph.D.</strong><br>
