@@ -26,14 +26,14 @@
 }
   ul.centered-line {
     list-style: none; /* remove default bullets */
-    padding-left: 20px; /* space for custom bullets */
+    padding-left: 10px; /* space for custom bullets */
     margin: 0;
     position: relative;
   }
 
   ul.centered-line li {
     position: relative;
-    padding-left: 20px; /* space for bullet */
+    padding-left: 10px; /* space for bullet */
     margin-bottom: 10px;
     display: flex;
     align-items: center; /* vertically center text with bullet */
@@ -55,7 +55,7 @@
   ul.centered-line li::after {
     content: '';
     position: absolute;
-    left: -8px; /* center bullet on the line */
+    left: -4px; /* center bullet on the line */
     top: 50%;
     transform: translateY(-50%);
     width: 10px;  /* bullet size */
