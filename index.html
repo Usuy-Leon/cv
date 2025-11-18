@@ -24,24 +24,54 @@
     --text-size: 1.05rem;
     --small-size: 0.9rem;
 }
-ul.grouped-list {
-    list-style-type: disc; /* standard bullet points */
-    padding-left: 20px;
+  ul.centered-line {
+    list-style: none; /* remove default bullets */
+    padding-left: 20px; /* space for custom bullets */
     margin: 0;
-    border: 1px solid #ccc; /* optional: border around whole list */
-    border-radius: 4px; /* optional: rounded corners */
-    max-width: 600px; /* optional: limit the width */
+    position: relative;
   }
 
-ul.grouped-list li {
-    padding: 8px 12px; /* spacing inside each item */
-    border-top: 1px solid #ccc; /* thin line on top of each item */
+  ul.centered-line li {
+    position: relative;
+    padding-left: 20px; /* space for bullet */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* vertically center text with bullet */
   }
 
-ul.grouped-list li:first-child {
-    border-top: none; /* remove the line on the first item */
+  ul.centered-line li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px; /* thin vertical line */
+    background-color: #ccc;
+    margin: auto 0;
+    height: 100%;
+    z-index: 0;
   }
 
+  ul.centered-line li::after {
+    content: '';
+    position: absolute;
+    left: -8px; /* center bullet on the line */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;  /* bullet size */
+    height: 10px; /* bullet size */
+    border-radius: 50%;
+    background-color: #333; /* bullet color */
+    z-index: 1;
+  }
+
+  ul.centered-line li:first-child::before {
+    top: 50%;
+  }
+
+  ul.centered-line li:last-child::before {
+    bottom: 50%;
+  }
 [data-theme="dark"] {
     --bg: #1c1c1c;
     --text: #e6e6e6;
@@ -352,7 +382,7 @@ li { margin-bottom: 6px; }
 <!-- ===== Habilidades técnicas ===== -->
 <div class="section-title">Technical </div>
 
-<ul class="grouped-list">
+<ul class="centered-line">
     <li><strong style="color:#8ab040;">Microscopy:</strong> Confocal, Light sheet, Confocal live, and Expansion microscopy</li>
     <li><strong style="color:#8ab040;">Electrophysiology:</strong> Patch-clamp, ERG, Calcium imaging  <em>(GCamp6, Fluo4AM) <em></li>
     <li><strong style="color:#8ab040;">Molecular:</strong> CRISPR, PCR, cell transfection, Western blot</li>
