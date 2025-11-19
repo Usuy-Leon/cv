@@ -12,6 +12,8 @@
 <button id="accessButton" title="Access Website" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">
   PDF
 </button>
+<button onclick="doGTranslate('en|es'); return false;">Translate to Spanish</button>
+
 <style>
 /* ============================================================
    THEME VARIABLES
@@ -538,7 +540,20 @@ li { margin-bottom: 5px; }
     </div>
 </div>
 </div>
+<div id="google_translate_element" style="display:none;"></div> 
 
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 const toggleBtn = document.getElementById("themeToggle");
 
@@ -546,6 +561,34 @@ toggleBtn.addEventListener("click", () => {
     document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
 });
+<script type="text/javascript">
+function GTranslateFireEvent(element, event) {
+  try {
+    if (document.createEvent) {
+      var evt = document.createEvent('HTMLEvents');
+      evt.initEvent(event, true, true);
+      element.dispatchEvent(evt);
+    } else {
+      var evt = document.createEventObject();
+      element.fireEvent('on' + event);
+    }
+  } catch (e) {}
+}
+
+function doGTranslate(langPair) {
+  if(langPair.value) langPair = langPair.value;
+  var lang = langPair.split('|')[1];
+  var select = document.querySelector('#google_translate_element select');
+  if (!select || !select.options) return;
+  for (var i=0; i < select.options.length; i++) {
+    if (select.options[i].value.indexOf(lang) > -1) {
+      select.selectedIndex = i;
+      GTranslateFireEvent(select, 'change');
+      break;
+    }
+  }
+}
+</script>
 
 
 
