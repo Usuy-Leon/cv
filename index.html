@@ -12,7 +12,12 @@
 <button id="accessButton" title="Access Website" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">
   PDF
 </button>
-<button onclick="doGTranslate('en|es'); return false;">Translate to Spanish</button>
+<!-- Hidden Google Translate element -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<button id="accessButton" title="Translate Website to Spanish" onclick="doGTranslate('en|es'); return false;">
+  ES
+</button>
 
 <style>
 /* ============================================================
@@ -303,6 +308,47 @@ li { margin-bottom: 5px; }
   color: white;
 }
 /* ============================================================
+   taccess TOGGLE
+========================================================== */
+#taccessButton {
+  position: fixed;
+  top: 120px;  /* positioned below the themeToggle button */
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+  padding: 0;
+
+  background: var(--primary);
+  color: white;
+
+  border: none;
+  border-radius: 50%;  /* circular shape */
+  cursor: pointer;
+
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.3s ease;
+}
+
+#taccessButton:hover {
+  background-color: var(--accent);
+  color: black;
+}
+
+[data-theme="dark"] #accessButton {
+  background: var(--accent);
+  color: black;
+}
+
+[data-theme="dark"] #accessButton:hover {
+  background-color: var(--primary);
+  color: white;
+}
+/* ============================================================
    MOBILE
 ============================================================ */
 @media (max-width: 600px) {
@@ -322,7 +368,7 @@ li { margin-bottom: 5px; }
     <h1>Usuy David León Tolosa</h1>
 
     <div class="contact">
-        <a href="https://neurotree.org/beta/tree.php?pid=928916"> &nbsp;|&nbsp;NeuroTree</a> &nbsp;|&nbsp;
+        <a href="https://neurotree.org/beta/tree.php?pid=928916">|&nbsp;NeuroTree</a> &nbsp;|&nbsp;
         <a href="mailto:udleont@unal.edu.co">udleont(a)unal.edu.co</a> &nbsp;|&nbsp;
         <a href="https://orcid.org/0000-0001-7868-9934">ORCID</a> &nbsp;|&nbsp;
         <a href="https://github.com/Usuy-Leon">GitHub</a> &nbsp;|&nbsp;
@@ -539,21 +585,7 @@ li { margin-bottom: 5px; }
         <a href="mailto:enasil@unal.edu.co">enasil@unal.edu.co</a>
     </div>
 </div>
-</div>
-<div id="google_translate_element" style="display:none;"></div> 
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'es',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-</script>
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 const toggleBtn = document.getElementById("themeToggle");
 
@@ -561,10 +593,20 @@ toggleBtn.addEventListener("click", () => {
     document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
 });
+
 <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',  // change if your site language differs
+    includedLanguages: 'es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
 function GTranslateFireEvent(element, event) {
   try {
-    if (document.createEvent) {
+    if(document.createEvent) {
       var evt = document.createEvent('HTMLEvents');
       evt.initEvent(event, true, true);
       element.dispatchEvent(evt);
@@ -572,16 +614,16 @@ function GTranslateFireEvent(element, event) {
       var evt = document.createEventObject();
       element.fireEvent('on' + event);
     }
-  } catch (e) {}
+  } catch(e) {}
 }
 
 function doGTranslate(langPair) {
   if(langPair.value) langPair = langPair.value;
   var lang = langPair.split('|')[1];
   var select = document.querySelector('#google_translate_element select');
-  if (!select || !select.options) return;
-  for (var i=0; i < select.options.length; i++) {
-    if (select.options[i].value.indexOf(lang) > -1) {
+  if(!select || !select.options) return;
+  for(var i=0; i<select.options.length; i++) {
+    if(select.options[i].value.indexOf(lang) > -1) {
       select.selectedIndex = i;
       GTranslateFireEvent(select, 'change');
       break;
@@ -589,6 +631,9 @@ function doGTranslate(langPair) {
   }
 }
 </script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 
 
