@@ -257,7 +257,47 @@ li { margin-bottom: 5px; }
     background: var(--accent);
     color: black;
 }
+/* ============================================================
+   DARK MODE TOGGLE
+============================================================ */
+#accessButton {
+  position: fixed;
+  top: 80px;  /* positioned below the themeToggle button */
+  right: 20px;
 
+  width: 50px;
+  height: 50px;
+  padding: 0;
+
+  background: var(--primary);
+  color: white;
+
+  border: none;
+  border-radius: 50%;  /* circular shape */
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.3s ease;
+}
+
+#accessButton:hover {
+  background-color: var(--accent);
+  color: black;
+}
+
+[data-theme="dark"] #accessButton {
+  background: var(--accent);
+  color: black;
+}
+
+[data-theme="dark"] #accessButton:hover {
+  background-color: var(--primary);
+  color: white;
+}
 /* ============================================================
    MOBILE
 ============================================================ */
@@ -505,6 +545,10 @@ toggleBtn.addEventListener("click", () => {
         document.body.dataset.theme === "dark" ? "light" : "dark";
 });
 </script>
+<button id="accessButton" title="Access Website" onclick="window.location.href='https://example.com';">
+  Go
+</button>
+
 
 </body>
 </html>
