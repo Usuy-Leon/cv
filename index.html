@@ -86,21 +86,36 @@
 #homeButton {
     position: fixed;
     top: 20px;
-    left: 20px; /* aligned left */
+    left: 20px;
+
+    width: 45px;   /* equal width/height makes it a circle */
+    height: 45px;
+    padding: 0;
+
     background: var(--primary);
     color: white;
+
     border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
+    border-radius: 50%; /* makes it circular */
     cursor: pointer;
-    font-size: 0.9rem;
+
+    font-size: 1.1rem; /* icon slightly bigger */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+
     transition: 0.25s;
     z-index: 1000;
-  }
+}
+
+[data-theme="dark"] #homeButton {
+    background: var(--accent);
+    color: black;
+}
+
+#homeButton:hover {
+    filter: brightness(0.9);
+}
 
   [data-theme="dark"] #homeButton {
     background: var(--accent);
