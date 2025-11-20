@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
@@ -225,7 +228,9 @@ a, a:visited, a:hover, a:active {
 <button id="themeToggle">🌙</button>
 
 <!-- PDF BUTTON -->
-<button id="accessButton" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">PDF</button>
+<button id="accessButton" title="Download PDF" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">
+  <i class="fa fa-download" aria-hidden="true"></i>
+</button>
 
 <!-- TRANSLATE BUTTON -->
 <button id="taccessButton" onclick="doGTranslate('en|es'); return false;">ES</button>
