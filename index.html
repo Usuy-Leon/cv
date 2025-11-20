@@ -587,16 +587,18 @@ li { margin-bottom: 5px; }
 </div>
 
 
-  <script>
-    // Dark mode toggle
-    const toggleBtn = document.getElementById("themeToggle");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-    });
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+    document.body.dataset.theme =
+        document.body.dataset.theme === "dark" ? "light" : "dark";
+});
+
 
     // Google Translate initialization function called by the Google Translate script
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
         pageLanguage: 'en',
         includedLanguages: 'es', // Spanish only; add others separated by comma if needed
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -632,10 +634,9 @@ li { margin-bottom: 5px; }
         }
       }
     }
+   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+      
   </script>
-
-  <!-- Load Google Translate element JS asynchronously -->
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
