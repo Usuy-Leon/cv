@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<button id="homeButton" title="Home" onclick="location.href='https://usuy-leon.github.io/home.github.io/'">
-  <i class="fas fa-arrow-left"></i>
-</button>
-<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV – Usuy David León Tolosa</title>
-<button id="accessButton" title="Access Website" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">
-  PDF
-</button>
-<!-- Hidden Google Translate element -->
-<div id="google_translate_element" style="display:none;"></div>
 
-<button id="taccessButton" title="Translate Website to Spanish" onclick="doGTranslate('en|es'); return false;">
-  ES
-</button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+<title>CV – Usuy David León Tolosa</title>
 
 <style>
 /* ============================================================
@@ -29,62 +19,54 @@
     --primary: #145A14;
     --accent: #4c7f4c;
     --card: #ffffff;
-
-    --font-main: "Lora",Charter, Georgia, serif;
+    --font-main: "Lora", Charter, Georgia, serif;
 
     --h1-size: 2.6rem;
     --h2-size: 1.55rem;
     --text-size: 1.05rem;
     --small-size: 0.9rem;
 }
-  ul.centered-line {
-    list-style: none; /* remove default bullets */
-    padding-left: 10px; /* space for custom bullets */
-    margin: 0;
-    position: relative;
-  }
 
-  ul.centered-line li {
-    position: relative;
-    padding-left: 10px; /* space for bullet */
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* vertically center text with bullet */
-  }
+/* ===== Custom Timeline List ===== */
+ul.centered-line {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+  position: relative;
+}
+ul.centered-line li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+ul.centered-line li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #8ab040;
+  height: 150%;
+  margin: auto 0;
+}
+ul.centered-line li::after {
+  content: '';
+  position: absolute;
+  left: -2.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #145A14;
+}
 
-  ul.centered-line li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px; /* thin vertical line */
-    background-color: #8ab040;
-    margin: auto 0;
-    height: 150%;
-    z-index: 0;
-  }
-
-  ul.centered-line li::after {
-    content: '';
-    position: absolute;
-    left: -2.5px; /* center bullet on the line */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5px;  /* bullet size */
-    height: 5px; /* bullet size */
-    border-radius: 50%;
-    background-color: #145A14; /* bullet color */
-    z-index: 1;
-  }
-
-  ul.centered-line li:first-child::before {
-    top: 50%;
-  }
-
-  ul.centered-line li:last-child::before {
-    bottom: 50%;
-  }
+/* ============================================================
+   DARK MODE
+============================================================ */
 [data-theme="dark"] {
     --bg: #1c1c1c;
     --text: #e6e6e6;
@@ -92,48 +74,33 @@
     --accent: #c5f2a8;
     --card: #2a2a2a;
 }
+
+/* ============================================================
+   HOME BUTTON (fixed circle)
+============================================================ */
 #homeButton {
     position: fixed;
     top: 20px;
     left: 20px;
-
-    width: 45px;   /* equal width/height makes it a circle */
+    width: 45px;
     height: 45px;
-    padding: 0;
-
     background: var(--primary);
     color: white;
-
     border: none;
-    border-radius: 50%; /* makes it circular */
+    border-radius: 50%;
     cursor: pointer;
-
-    font-size: 1.1rem; /* icon slightly bigger */
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    transition: 0.25s;
     z-index: 1000;
 }
-
 [data-theme="dark"] #homeButton {
     background: var(--accent);
     color: black;
 }
+#homeButton:hover { filter: brightness(0.9); }
 
-#homeButton:hover {
-    filter: brightness(0.9);
-}
-
-  [data-theme="dark"] #homeButton {
-    background: var(--accent);
-    color: black;
-  }
-
-  #homeButton:hover {
-    filter: brightness(0.9);
-  }
 /* ============================================================
    GLOBAL
 ============================================================ */
@@ -146,9 +113,6 @@ body {
     line-height: 1.6;
     transition: background 0.25s, color 0.25s;
 }
-
-a { color: var(--primary); }
-a:hover { text-decoration: underline; }
 
 /* ============================================================
    LAYOUT
@@ -168,20 +132,14 @@ a:hover { text-decoration: underline; }
     padding: 60px 20px 40px;
     text-align: center;
 }
-
 .header h1 {
     margin: 0;
     font-size: var(--h1-size);
     font-weight: 700;
 }
 
-.header .contact a {
-    color: white;
-    font-weight: 600;
-}
-
 /* ============================================================
-   TITLES
+   SECTION TITLES
 ============================================================ */
 .section-title {
     color: var(--primary);
@@ -191,15 +149,13 @@ a:hover { text-decoration: underline; }
     border-bottom: 2px solid var(--primary);
     padding-bottom: 3px;
 }
-
-/* Adjust in dark mode */
 [data-theme="dark"] .section-title {
     color: var(--accent);
     border-color: var(--accent);
 }
 
 /* ============================================================
-   ENTRIES (Timeline layout)
+   ENTRY LAYOUT
 ============================================================ */
 .entry {
     display: flex;
@@ -208,146 +164,42 @@ a:hover { text-decoration: underline; }
     margin: 10px 0;
     flex-wrap: wrap;
 }
-
 .entry-date {
     flex: 0 0 180px;
     font-weight: bold;
     color: var(--primary);
 }
-
-[data-theme="dark"] .entry-date {
-    color: var(--accent);
-}
-
+[data-theme="dark"] .entry-date { color: var(--accent); }
 .entry-content { flex: 1; }
 
 /* ============================================================
-   LISTS
+   RIGHT BUTTONS (PDF + Translate)
 ============================================================ */
-ul { padding-left: 8px; margin-top: 5px; }
-li { margin-bottom: 5px; }
-
-/* ============================================================
-   REFERENCES GRID
-============================================================ */
-.references {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 15px;
-}
-
-/* ============================================================
-   DARK MODE TOGGLE
-============================================================ */
-#themeToggle {
+#themeToggle, #accessButton, #taccessButton {
   position: fixed;
-  top: 20px;
   right: 20px;
-
-  width: 45px;   /* equal width/height makes it a circle */
-  height: 45px;
-  padding: 0;
-
-  background: var(--primary);
-  color: white;
-
-  border: none;
-  border-radius: 50%; /* makes it circular */
-  cursor: pointer;
-
-  font-size: 1.1rem; /* icon slightly bigger */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-[data-theme="dark"] #themeToggle {
-    background: var(--accent);
-    color: black;
-}
-/* ============================================================
-   PDF TOGGLE
-============================================================ */
-#accessButton {
-  position: fixed;
-  top: 80px;  /* positioned below the themeToggle button */
-  right: 20px;
-
   width: 50px;
   height: 50px;
-  padding: 0;
-
+  border: none;
+  border-radius: 50%;
   background: var(--primary);
   color: white;
-
-  border: none;
-  border-radius: 50%;  /* circular shape */
   cursor: pointer;
-
-  font-size: 1.0rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition: background-color 0.3s ease;
 }
-
-#accessButton:hover {
-  background-color: var(--accent);
-  color: black;
-}
-
-[data-theme="dark"] #accessButton {
+[data-theme="dark"] #themeToggle,
+[data-theme="dark"] #accessButton,
+[data-theme="dark"] #taccessButton {
   background: var(--accent);
   color: black;
 }
 
-[data-theme="dark"] #accessButton:hover {
-  background-color: var(--primary);
-  color: white;
-}
-/* ============================================================
-   taccess TOGGLE
-========================================================== */
-#taccessButton {
-  position: fixed;
-  top: 140px;  /* positioned below the themeToggle button */
-  right: 20px;
+#themeToggle { top: 20px; }
+#accessButton { top: 80px; }
+#taccessButton { top: 140px; }
 
-  width: 50px;
-  height: 50px;
-  padding: 0;
-
-  background: var(--primary);
-  color: white;
-
-  border: none;
-  border-radius: 50%;  /* circular shape */
-  cursor: pointer;
-
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: background-color 0.3s ease;
-}
-
-#taccessButton:hover {
-  background-color: var(--accent);
-  color: black;
-}
-
-[data-theme="dark"] #accessButton {
-  background: var(--accent);
-  color: black;
-}
-
-[data-theme="dark"] #taccessButton:hover {
-  background-color: var(--primary);
-  color: white;
-}
 /* ============================================================
    MOBILE
 ============================================================ */
@@ -360,8 +212,23 @@ li { margin-bottom: 5px; }
 
 <body>
 
+<!-- HOME BUTTON -->
+<button id="homeButton" title="Home" onclick="location.href='https://usuy-leon.github.io/home.github.io/'">
+  <i class="fas fa-arrow-left"></i>
+</button>
+
 <!-- DARK MODE BUTTON -->
-<button id="themeToggle"> 🌙 </button>
+<button id="themeToggle">🌙</button>
+
+<!-- PDF BUTTON -->
+<button id="accessButton" onclick="window.location.href='https://usuy-leon.github.io/Usuy-Leon/CV_Leon_En.pdf';">PDF</button>
+
+<!-- TRANSLATE BUTTON -->
+<button id="taccessButton" onclick="doGTranslate('en|es'); return false;">ES</button>
+
+<!-- Google Translate container -->
+<div id="google_translate_element" style="display:none;"></div>
+
 
 <!-- HEADER -->
 <div class="header">
@@ -587,58 +454,49 @@ li { margin-bottom: 5px; }
 </div>
 
 
+<!-- SCRIPTS -->
 <script>
 const toggleBtn = document.getElementById("themeToggle");
 
+// Dark Mode Toggle
 toggleBtn.addEventListener("click", () => {
     document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
 });
 
-
-    // Google Translate initialization function called by the Google Translate script
+// Google Translate Init
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'es', // Spanish only; add others separated by comma if needed
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'es',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function GTranslateFireEvent(element, event) {
+  if (document.createEvent) {
+    let evt = document.createEvent('HTMLEvents');
+    evt.initEvent(event, true, true);
+    element.dispatchEvent(evt);
+  }
+}
+
+function doGTranslate(langPair) {
+  var lang = langPair.split('|')[1];
+  var select = document.querySelector('#google_translate_element select');
+  if (!select) return;
+  for (var i = 0; i < select.options.length; i++) {
+    if (select.options[i].value.includes(lang)) {
+      select.selectedIndex = i;
+      GTranslateFireEvent(select, 'change');
+      break;
     }
+  }
+}
+</script>
 
-    // Helper function to trigger change event for Google Translate
-    function GTranslateFireEvent(element, event) {
-      try {
-        if (document.createEvent) {
-          var evt = document.createEvent('HTMLEvents');
-          evt.initEvent(event, true, true);
-          element.dispatchEvent(evt);
-        } else {
-          var evt = document.createEventObject();
-          element.fireEvent('on' + event);
-        }
-      } catch (e) {}
-    }
-
-    // Programmatically change Google Translate language
-    function doGTranslate(langPair) {
-      if (langPair.value) langPair = langPair.value;
-      var lang = langPair.split('|')[1];
-      var select = document.querySelector('#google_translate_element select');
-      if (!select || !select.options) return;
-      for (var i = 0; i < select.options.length; i++) {
-        if (select.options[i].value.indexOf(lang) > -1) {
-          select.selectedIndex = i;
-          GTranslateFireEvent(select, 'change');
-          break;
-        }
-      }
-    }
-   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-      
-  </script>
-
-
+<!-- Load Translate Script Correctly -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
