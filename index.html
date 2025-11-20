@@ -15,7 +15,7 @@
 <!-- Hidden Google Translate element -->
 <div id="google_translate_element" style="display:none;"></div>
 
-<button id="accessButton" title="Translate Website to Spanish" onclick="doGTranslate('en|es'); return false;">
+<button id="taccessButton" title="Translate Website to Spanish" onclick="doGTranslate('en|es'); return false;">
   ES
 </button>
 
@@ -344,7 +344,7 @@ li { margin-bottom: 5px; }
   color: black;
 }
 
-[data-theme="dark"] #accessButton:hover {
+[data-theme="dark"] #taccessButton:hover {
   background-color: var(--primary);
   color: white;
 }
@@ -593,7 +593,7 @@ toggleBtn.addEventListener("click", () => {
     document.body.dataset.theme =
         document.body.dataset.theme === "dark" ? "light" : "dark";
 });
-
+<script>
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
