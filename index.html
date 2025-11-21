@@ -39,7 +39,7 @@ html[data-theme="dark"] {
     --primary: #8ab040;
     --accent: #c5f2a8;
     --card: #2a2a2a;
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Darker shadow in dark mode */
+    --shadow-color: rgba(0, 0, 0, 0.4); 
 }
 
 /* ============================================================
@@ -53,7 +53,7 @@ body {
     font-size: var(--text-size);
     line-height: 1.6;
     transition: background 0.25s, color 0.25s;
-    text-shadow: 1px 1px 3px var(--shadow-color); /* Readability improvement */
+    text-shadow: 1px 1px 3px var(--shadow-color); 
 }
 a, a:visited, a:hover, a:active {
     color: white;
@@ -77,24 +77,20 @@ a, a:visited, a:hover, a:active {
     top: 20px;
     right: 20px;
     z-index: 999;
-    
-    /* Display buttons vertically */
     display: flex; 
     flex-direction: column;
     gap: 10px; 
-
-    /* Add transition for smooth hide/show (new feature) */
     transition: transform 0.4s ease-out, opacity 0.4s; 
 }
 
-/* Class applied by JavaScript when scrolling down */
+
 #fixedActions.hidden {
-    transform: translateX(80px); /* Move off-screen to the right */
+    transform: translateX(80px); 
     opacity: 0;
     pointer-events: none; /* Prevents interaction when hidden */
 }
 
-/* Style for all buttons inside the container */
+
 #fixedActions button {
     width: 50px;
     height: 50px;
@@ -121,9 +117,6 @@ html[data-theme="dark"] #fixedActions button {
     box-shadow: 0 6px 10px rgba(0,0,0,0.4);
 }
 
-/* ============================================================
-    OTHER SECTIONS (No change needed here for this request)
-============================================================ */
 
 /* HEADER */
 .header {
@@ -205,31 +198,33 @@ ul.centered-line li::after {
     background-color: #145A14;
 }
 
-/* MOBILE FIX */
+/* MOBILE FIX (Revised) */
 @media (max-width: 600px) {
-    /* 1. Stack the items */
     .entry {
+        /* 1. CRITICAL: Reset horizontal spacing from desktop flex/gap */
         flex-direction: column;
-        /* Ensure entries take full width in a column */
+        gap: 0; /* REMOVE the 20px gap when stacking vertically */
+        padding: 0;
+        margin: 10px 0; /* Keep vertical margin for separation between entries */
+        flex-wrap: nowrap; /* Prevent wrapping issues */
         width: 100%;
     }
 
-    /* 2. Fix the huge gap by resetting the horizontal spacing on .entry-content */
+    .entry-date {
+        /* 2. CRITICAL: Remove fixed width/flex-basis from desktop */
+        flex: none; /* Override flex: 0 0 180px; */
+        width: 100%; /* Ensure it takes full width */
+        margin-bottom: 5px; /* Adds clean space below the date */
+        margin-right: 0; /* Reset any right margin */
+    }
+
     .entry-content {
-        /* If you used a left margin/padding on desktop, remove it here */
+        /* 3. Reset all horizontal padding/margins */
         margin-left: 0;
         padding-left: 0;
-        /* Ensure it takes full available width */
         width: 100%;
-        /* Add a small top margin to separate it from the date */
-        margin-top: 5px; /* Adjust this value (5px) as needed */
-    }
-
-    /* 3. Handle the date's spacing (you already had this, but let's be explicit) */
-    .entry-date {
-        margin-bottom: 5px; /* Adds space *after* the date, *before* the content */
-        /* If the date had a fixed width on desktop, remove it here */
-        width: auto;
+        /* No need for margin-top as margin-bottom on entry-date handles the space */
+        flex: 1; /* Keep flex: 1 for safety, but it's less critical now */
     }
 }
 </style>
